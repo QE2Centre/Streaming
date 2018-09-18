@@ -1,0 +1,11 @@
+{
+  "name": "import-users",
+  "version": "1.0.0",
+  "description": "Import email addresses from CSV file into Firebase",
+  "main": "index.js",
+  "author": "Kevin Etchells",
+  "dependencies": {
+    "fast-csv": "^2.4.1",
+    "firebase-admin": "^6.0.0"
+  }
+}
