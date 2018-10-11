@@ -1,0 +1,9 @@
+body {font-family: sans-serif;}
+h1 {margin: 10px 0;}
+h2 {margin: 0;}
+.main_slide {border: 1px solid; width: 100%;}
+audio {width: 100%;}
+.slides-container {overflow-x: auto;}
+.slides {list-style-type: none; margin: 0; padding: 0; white-space: nowrap;}
+.thumbnail {background-size: contain; background-repeat: no-repeat; background-position: center; border: 1px solid white; color: rgba(100,100,100,0.4); display: inline-block; font-size: 60pt; height: 90px; margin-right: 2px; text-align: center; width: 160px;}
+.thumbnail:hover {border: 1px solid black;}
