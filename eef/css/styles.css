@@ -1,8 +1,12 @@
-body {background-color: #bfbfbf; font-family: 'FSAlbertPro'; font-size: 16pt; margin: 0 auto; max-width: 1280px;}
-header {background-color: #363940; border-bottom: 15px solid #009EDE; padding: 20px 20px 10px 20px;}
+body {font-family: 'FSAlbertPro'; font-size: 16pt; width: 100vw;}
+header {align-items: center; background-color: white; display: flex; justify-content: center; padding: 20px 20px 10px 20px;}
+header img {height: 100px;}
+h1, h2 {margin: 0;}
+h2 {color: #2e3184; display: none; font-size: 2em; position: relative; top: -10px;}
 
 main {background-color: white; text-align: center;}
 .banner {width: 100%;}
+.stream-soon {font-size: 1.1em; margin: 15vmin 0;}
 
 video {border: 1px solid black; height: 50.625vw; margin-top: 10px; width: 90vw;}
 iframe {border: 1px solid black; margin-top: 10px;}
@@ -21,18 +25,22 @@ video::-webkit-media-controls-panel {width: calc(100% + 30px);}
 .programme a {color: black; font-family: 'FSAlbertProBold'; text-decoration: none; /*text-shadow: 1px 1px 1px #aaa;*/}
 .programme a:hover {color: #009EDE; text-decoration: underline; text-shadow: none;}
 
-h2 {font-size: 1.4em; margin: 0;}
+.line {width: 100%;}
 
-footer {padding: 0 20px;}
-footer div {align-items: center; border-bottom: 1px solid #ddd; display: flex; margin-bottom: 20px; padding-bottom: 20px;}
-footer div:nth-child(3) {margin-bottom: 0;}
-footer span {font-size: 10pt; text-align: left; width: 150px;}
-footer img {margin: 0 2vw; max-height: 4vw;}
-.logo-catapult {max-height: 3vw;}
-.logo-manufacturer {max-height: 3vw;}
+footer {display: flex; justify-content: space-around; padding: 0 20px;}
+footer > div {align-items: center; display: flex;}
+footer img {height: 80px; margin: 0 2vw;}
+h3 {font-size: 0.9em; margin-top: 10px;}
+footer ul {list-style-type: none; padding: 0;}
+footer li {display: inline-block;}
 
 /* Responsive */
 @media only screen and (min-width: 890px) {
+    header {justify-content: space-between;}
+    h2 {display: block;}
+    .stream-soon {font-size: 1.2em;}
     video {height: 450px; width: 800px;}
     .programme {margin: 10px 20px;}
 }
+@media only screen and (min-width: 1280px) {
+    body {background-color: #bfbfbf; margin: 0 auto; max-width: 1280px;}
