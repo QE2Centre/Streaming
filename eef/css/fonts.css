@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'FSAlbertPro';
+    src: url('fonts/fsalbertpro-webfont.eot'); /* IE9 Compat Modes */
+    src: url('fonts/fsalbertpro-webfont.woff') format('woff'), /* Modern Browsers */
+    url('fonts/fsalbertpro-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('fonts/fsalbertpro-webfont.svg#svgFSAlbertPro') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'FSAlbertProBold';
+    src: url('fonts/fsalbertpro-bold-webfont.eot'); /* IE9 Compat Modes */
+    src: url('fonts/fsalbertpro-bold-webfont.woff') format('woff'), /* Modern Browsers */
+    url('fonts/fsalbertpro-bold-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('fonts/fsalbertpro-bold-webfont.svg#svgFSAlbertPro') format('svg'); /* Legacy iOS */
+}
+
