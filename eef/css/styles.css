@@ -1,6 +1,6 @@
 body {font-family: 'FSAlbertPro'; font-size: 16pt; width: 100vw;}
-header {align-items: center; background-color: white; display: flex; justify-content: center; padding: 20px 20px 10px 20px;}
-header img {height: 100px;}
+header {align-items: center; background-color: white; display: flex; justify-content: center; padding: 35px 35px 20px 35px;}
+header img {height: 80px;}
 h1, h2 {margin: 0;}
 h2 {color: #2e3184; display: none; font-size: 2em; position: relative; top: -10px;}
 
@@ -27,8 +27,7 @@ video::-webkit-media-controls-panel {width: calc(100% + 30px);}
 
 .line {width: 100%;}
 
-footer {display: flex; justify-content: space-around; padding: 0 20px;}
-footer > div {align-items: center; display: flex;}
+footer {border-top: 4px solid #2e3184; padding: 0 20px;}
 footer img {height: 80px; margin: 0 2vw;}
 h3 {font-size: 0.9em; margin-top: 10px;}
 footer ul {list-style-type: none; padding: 0;}
@@ -41,6 +40,10 @@ footer li {display: inline-block;}
     .stream-soon {font-size: 1.2em;}
     video {height: 450px; width: 800px;}
     .programme {margin: 10px 20px;}
+}
+@media only screen and (min-width: 970px) {
+    footer {display: flex; justify-content: space-around;}
+    footer > div {align-items: center; display: flex;}
 }
 @media only screen and (min-width: 1280px) {
     body {background-color: #bfbfbf; margin: 0 auto; max-width: 1280px;}
