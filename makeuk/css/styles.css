@@ -2,7 +2,7 @@ body {font-family: 'FSAlbertPro'; font-size: 16pt; width: 100vw;}
 header {align-items: center; background-color: white; display: flex; justify-content: center; padding: 35px 35px 20px 35px;}
 header img {height: 80px;}
 h1, h2 {margin: 0;}
-h2 {color: #2e3184; display: none; font-size: 2em; position: relative; top: -10px;}
+h2 {color: #2e3184; display: none; font-size: 2em; margin: 0; position: relative; top: -10px;}
 
 main {background-color: white; text-align: center;}
 .banner {width: 100%;}
@@ -16,11 +16,9 @@ video::-internal-media-controls-download-button {display:none;}
 video::-webkit-media-controls-enclosure {overflow:hidden;}
 video::-webkit-media-controls-panel {width: calc(100% + 30px);}
 
-.programme {margin: 10px 10px 0 10px; text-align: left;}
+.programme {/*list-style-type: none;*/ margin: 10px 10px 0 10px; text-align: left;}
 .programme thead {display: none;}
-.programme tr {display: block; margin-top: 10px;}
-.programme td {padding-bottom: 10px; vertical-align: top;}
-.programme td:nth-child(1) {width: 150px;}
+.programme li {display: block; margin: 30px 0;}
 .programme p {margin-bottom: 10px; margin-top: 0;}
 .programme a {color: black; font-family: 'FSAlbertProBold'; text-decoration: none; /*text-shadow: 1px 1px 1px #aaa;*/}
 .programme a:hover {color: #009EDE; text-decoration: underline; text-shadow: none;}
