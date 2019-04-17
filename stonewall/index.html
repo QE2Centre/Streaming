@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta charset="UTF-8"/>
+        <title>Stonewall Live Stream</title>
+        <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+        <link rel="icon" href="favicon.png">
+        <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    </head>
+    <body>
+        <header>
+            <img src="assets/stonewall30.png" alt="Stonewall. Acceptance without exception. 30"/>
+            <h2>Live Stream</h2>
+        </header>
+        <main class="authenticated">
+            <h1>Stonewall Workplace Conference 2019</h1>
+            <p>This event will be streamed live on Friday 26th April 2019</p>
+            <iframe frameborder="0" scrolling="no" allow="autoplay" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+            <button class="sign-out">Sign Out</button>
+            <div class="downloads">
+                <h2>Downloads:</h2>
+                <a href="assets/UN-Action-Planning-Kit-FINAL.pdf" target="_blank">UN Action Planning Kit</a>
+            </div>
+        </main>
+        <main class="not-authenticated">
+            <h1>Stonewall Workplace Conference 2019</h1>
+            <h2>Sign In:</h2>
+            <form>
+                <label>Username: <input type="text" id="username"/></label>
+                <label>Password: <input type="password" id="password"/></label>
+                <button type="submit">Sign In</button>
+                <p class="sign-in-error">There was a problem signing in. Please check your username and password and try again.</p>
+            </form>
+        </main>
+        <footer>
+            <p>Sponsored by:</p>
+            <img src="assets/p-g.png" alt="P and G">
+        </footer>
+        <script>
+
+            firebase.initializeApp({
+                apiKey: "AIzaSyA5veU78e538AC8cm-tLsJnlGTFPWoyJvE",
+                authDomain: "streaming-ed3ff.firebaseapp.com",
+                databaseURL: "https://streaming-ed3ff.firebaseio.com",
+                projectId: "streaming-ed3ff",
+                storageBucket: "streaming-ed3ff.appspot.com",
+                messagingSenderId: "481147247895"
+            });
+            
+            document.querySelector("form").onsubmit = function (evt) {
+                evt.preventDefault();
+                const email = document.querySelector("#username").value.toLowerCase().replace(/ /g, "_").replace("é", "e") + "@stonewall.org";
+                const password = document.querySelector("#password").value.replace(/workingglobally/i, "Workingglobally");
+                document.querySelector(".sign-in-error").style.display = "none";
+                firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+                    if (error) {
+                        console.log(error);
+                        document.querySelector(".sign-in-error").style.display = "block";
+                    }
+                });
+            };
+            
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    document.querySelector(".authenticated").style.display = "block";
+                    document.querySelector(".not-authenticated").style.display = "none";
+                    firebase.database().ref("stonewall-link").once("value").then(function(snapshot) {
+                        document.querySelector("iframe").src = snapshot.val();
+                    });
+                } else {
+                    document.querySelector(".authenticated").style.display = "none";
+                    document.querySelector(".not-authenticated").style.display = "block";
+                }
+            });
+            
+            document.querySelector(".sign-out").onclick = function () {
+                firebase.auth().signOut();
+            };
+
+        </script>
+    </body>
+</html>

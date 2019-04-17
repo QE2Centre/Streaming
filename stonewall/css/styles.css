@@ -1,0 +1,48 @@
+body {font-family: 'Roboto', sans-serif;; font-size: 16pt; width: 100vw;}
+header {align-items: center; background-color: #e82c2a; color: white; display: flex; justify-content: center; padding: 20px;}
+header img {height: 100px;}
+header h2 {display: none; font-size: 2em; margin: 0; position: relative; top: -10px;}
+
+main {background-color: white; min-height: calc(100vh - 270px); padding: 20px 0; position: relative; text-align: center;}
+h1 {margin-bottom: 20px; margin-top: 0;}
+
+iframe {border: 1px solid black; height: 50.625vw; margin-top: 10px; width: 90vw;}
+
+/* hide download button */
+video::-internal-media-controls-download-button {display:none;}
+video::-webkit-media-controls-enclosure {overflow:hidden;}
+video::-webkit-media-controls-panel {width: calc(100% + 30px);}
+
+.programme {margin: 10px 10px 0 10px; text-align: left;}
+.programme thead {display: none;}
+.programme tr {display: block; margin-top: 10px;}
+.programme td {padding-bottom: 10px; vertical-align: top;}
+.programme td:nth-child(1) {width: 150px;}
+.programme p {margin-bottom: 10px; margin-top: 0;}
+.programme a {color: black; font-family: 'FSAlbertProBold'; text-decoration: none; /*text-shadow: 1px 1px 1px #aaa;*/}
+.programme a:hover {color: #009EDE; text-decoration: underline; text-shadow: none;}
+
+.authenticated {display: none;}
+.sign-in-error {background-color: #e82c2a; color: white; display: none; padding: 5px;}
+.sign-out {font-size: 12pt; position: absolute; right: 10px; top: 10px;}
+label {display: block; margin-bottom: 20px;}
+input {padding-left: 10px;}
+
+.downloads {border: 1px solid black; margin: 10px auto; padding: 10px; width: calc(90vw - 20px);}
+.downloads h2 {margin-bottom: 10px; margin-top: 0;}
+
+footer {align-items: center; background-color: black; color: white; display: flex; justify-content: center; padding: 20px; text-align: center;}
+footer p {margin: 0 20px;}
+footer img {height: 50px;}
+
+/* Responsive */
+@media only screen and (min-width: 890px) {
+    header {justify-content: space-between;}
+    header h2 {display: block;}
+    .stream-soon {font-size: 1.2em;}
+    iframe {height: 450px; width: 800px;}
+    .programme {margin: 10px 20px;}
+    .downloads {width: 780px;}
+}
+@media only screen and (min-width: 1280px) {
+    body {background-color: #bfbfbf; margin: 0 auto; max-width: 1280px;}
