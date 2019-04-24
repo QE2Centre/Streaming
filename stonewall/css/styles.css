@@ -1,10 +1,11 @@
 body {font-family: 'Roboto', sans-serif; font-size: 16pt; width: 100vw;}
-header {align-items: center; background-color: #e82c2a; background-image: url('../assets/ScatterPattern.jpg'); background-size: cover; color: white; display: flex; justify-content: center; padding: 20px;}
+header, footer {background-color: #e82c2a; background-image: url('../assets/ScatterPattern.jpg'); background-size: cover; color: white;}
+header {align-items: center; display: flex; justify-content: center; padding: 20px;}
 header img {height: 100px;}
 header h2 {display: none; font-size: 2em; margin: 0; position: relative; top: -10px;}
 
-main {background-color: white; min-height: calc(100vh - 270px); padding: 20px 0; position: relative; text-align: center;}
-h1 {font-size: 1.7em; margin: 20px 0;}
+main {background-image: url('../assets/faded_laughing.jpg'); background-size: cover; color: white; min-height: calc(100vh - 270px); padding: 20px 0; position: relative; text-align: center;}
+h1 {font-size: 1.6em; margin: 20px 0;}
 
 iframe {border: 1px solid black; height: 50.625vw; margin-top: 10px; width: 90vw;}
 
@@ -22,7 +23,6 @@ video::-webkit-media-controls-panel {width: calc(100% + 30px);}
 .programme a {color: black; font-family: 'FSAlbertProBold'; text-decoration: none; /*text-shadow: 1px 1px 1px #aaa;*/}
 .programme a:hover {color: #009EDE; text-decoration: underline; text-shadow: none;}
 
-.not-authenticated {background-image: url('../assets/faded_laughing.jpg'); background-size: cover; color: white;}
 .center {align-items: center; display: flex; justify-content: center; min-height: calc(100vh - 500px);}
 .authenticated {display: none;}
 .sign-in-error {background-color: #e82c2a; color: white; display: none; padding: 5px;}
@@ -31,12 +31,14 @@ form {background-color: rgba(227,6,19,0.7); padding: 0 40px 30px 40px;}
 label {display: block; margin-bottom: 20px;}
 input {margin-left: 10px; padding: 4px;}
 
-.downloads {border: 1px solid black; margin: 10px auto; padding: 10px; width: calc(90vw - 20px);}
-.downloads h2 {margin-bottom: 10px; margin-top: 0;}
+.downloads {background-color: rgba(255,255,255,0.9); color: black; margin: 10px auto; padding: 10px; width: calc(90vw - 20px);}
+.downloads h2 {font-size: 1.2em; margin-bottom: 10px; margin-top: 0;}
 
-footer {align-items: center; background-color: black; color: white; display: flex; justify-content: center; padding: 20px; text-align: center;}
-footer p {margin: 0 20px;}
+footer {padding: 20px; position: relative; text-align: center;}
+footer div {align-items: center; display: flex; justify-content: center;}
+footer div p {margin: 0 20px;}
 footer img {height: 50px;}
+.social-media {border-top: 1px solid white; margin-bottom: 0; margin-top: 15px; padding-top: 10px;}
 
 /* Responsive */
 @media only screen and (min-width: 890px) {
@@ -46,6 +48,8 @@ footer img {height: 50px;}
     iframe {height: 450px; width: 800px;}
     .programme {margin: 10px 20px;}
     .downloads {width: 780px;}
+    .downloads h2 {font-size: 1.4em;}
+    .social-media {border: none; font-weight: bold; position: absolute; right: 20px; top: 8px;}
 }
 @media only screen and (min-width: 1280px) {
     body {background-color: #bfbfbf; margin: 0 auto; max-width: 1280px;}

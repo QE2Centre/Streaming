@@ -38,8 +38,11 @@
             </div>
         </main>
         <footer>
-            <p>Sponsored by:</p>
-            <img src="assets/p-g.png" alt="P and G">
+            <div>
+                <p>Supported by:</p>
+                <img src="assets/p-g.png" alt="P and G">
+            </div>
+            <p class="social-media">#EqualAtWork &nbsp;|&nbsp; @StonewallUK</p>
         </footer>
         <script>
 
@@ -54,8 +57,9 @@
             
             document.querySelector("form").onsubmit = function (evt) {
                 evt.preventDefault();
-                const email = document.querySelector("#username").value.toLowerCase().replace(/ /g, "_").replace("é", "e") + "@stonewall.org";
+                const email = document.querySelector("#username").value.toLowerCase().replace(/ /g, "_").replace(/é/g, "e").replace(/ó/g, "o").replace(/\//g, "").replace(/\(/g, "").replace(/\)/g, "") + "@stonewall.org";
                 const password = document.querySelector("#password").value.replace(/workingglobally/i, "Workingglobally");
+                console.log(email);
                 document.querySelector(".sign-in-error").style.display = "none";
                 firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
                     if (error) {
