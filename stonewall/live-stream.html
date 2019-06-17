@@ -13,45 +13,17 @@
     <body>
         <header>
             <img src="assets/stonewall30.png" alt="Stonewall. Acceptance without exception. 30"/>
+            <h2>Live Stream</h2>
         </header>
         <main class="authenticated">
             <h1>Stonewall London Workplace Conference 2019</h1>
-
-            <video src="videos/Session1.mp4" controls autoplay></video>
-            
-            <div class="programme box">
-                <h2>Programme:</h2>
-                <p class="small">(Click the session titles below to view the videos)</p>
-                <ul>
-                    <li>
-                        <p><a href="#" data-src="Session1">Opening session: LGBT inclusion: Looking to the future</a></p>
-                    </li>
-                    <li>
-                        <p><a href="#" data-src="Session2">Workshop A: Global LGBT equality: from paper to practice</a></p>
-                    </li>
-                    <li>
-                        <p><a href="#" data-src="Session3">Screening of ‘The Words Matter: One Voice Can Make a Difference’ by Procter &amp; Gamble</a></p>
-                    </li>
-                    <li>
-                        <p><a href="#" data-src="Session4">Discussion B: Safe travel in a global workplace</a></p>
-                    </li>
-                    <li>
-                        <p><a href="#" data-src="Session5">Workshop C: Working in partnership with local LGBT actors to advance equality globally</a></p>
-                    </li>
-                    <li>
-                        <p><a href="#" data-src="Session6">Closing session: LGBT and Faith Panel</a></p>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="downloads box">
-                <h2>Downloads / Links:</h2>
-                <p><a href="assets/Materials_for_Session_A.pdf" target="_blank" aria-label="Materials for Sessions A (may open in new tab)">Materials for Session A</a></p>
-                <p>Find out more about our BAME voices videos <a href="https://www.stonewall.org.uk/about-us/media-centre/stonewall-debuts-bame-lgbt-voices-documentary" target="_blank" aria-label="here (opens in new tab)" >here</a></p>
-            </div>
-            
+            <p>This event will be streamed live on Friday 26th April 2019, starting at 09:45</p>
+            <iframe frameborder="0" scrolling="no" allow="autoplay" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
             <button class="sign-out">Sign Out</button>
-            
+            <div class="downloads">
+                <h2>Downloads:</h2>
+                <a href="assets/Materials_for_Session_A.pdf" target="_blank">Materials for Session A</a>
+            </div>
         </main>
         <main class="not-authenticated">
             <h1>Stonewall London Workplace Conference 2019</h1>
@@ -114,50 +86,6 @@
                 firebase.auth().signOut();
             };
 
-            var links = document.querySelectorAll("li a"),
-                i,
-                resizeVideo;
-
-            for (i = 0; i < links.length; i++) {
-                (function () {
-                    var index = i;
-                    links[index].onclick = function(event) {
-                        var video = document.querySelector("video");
-                        video.src = "videos/" + event.target.getAttribute("data-src") + ".mp4";
-                        video.play();
-                        //document.querySelector("iframe").src = "https://iframe.dacast.com/b/97507/f/" + event.target.getAttribute("data-src");
-                    }
-                }());
-            }
-
-            resizeVideo = function () {
-                if (window.innerWidth >= 890) {
-                    document.querySelector("video").width = 800;
-                    document.querySelector("video").height = 450;
-                } else {
-                    document.querySelector("video").width = window.innerWidth * 0.9;
-                    document.querySelector("video").height = window.innerWidth * 0.50625;
-                }
-            }
-            resizeVideo();
-            window.onresize = function() {
-                resizeVideo();
-            };
-            
-            document.querySelector("video").onended = function (evt) {
-                let nextVideoIndex,
-                    i;
-                for (i = 0; i < links.length; i++) {
-                    if (event.target.src.indexOf(links[i].getAttribute("data-src")) !== -1) {
-                        nextVideoIndex = i + 1;
-                    }
-                }
-                if (nextVideoIndex && nextVideoIndex < links.length) {
-                    evt.target.src = "content/" + links[nextVideoIndex].getAttribute("data-src") + ".mp4";
-                    evt.target.play();
-                }
-            };
-            
         </script>
     </body>
 </html>
